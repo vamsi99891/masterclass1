@@ -18,8 +18,6 @@ async def create_user(users: List[User]):
         created_users.append({
             "id": user.id,
             "name": user.name,
-            "email": user.email,
-            "department": user.department,
             "location": user.location
         })
 
@@ -35,12 +33,6 @@ def search_by_location(location: str):
         if location.lower() in user.location.lower()
     ]
 
-
-def search_by_department(department: str):
-    return [
-        user for user in users_db
-        if department.lower() in user.department.lower()
-    ]
 
 
 def search_by_id(user_id: str):
